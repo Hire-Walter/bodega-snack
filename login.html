@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Access the Bodega Snack client portal or request a client account.">
+  <meta name="theme-color" content="#080808">
+  <title>Client Portal | Bodega Snack</title>
+  <link rel="icon" href="./assets/favicon.png" type="image/png">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./login.css">
+  <script src="./login.js" defer></script>
+</head>
+<body class="login-page">
+  <a class="skip-link" href="#portal">Skip to portal access</a>
+  <header class="portal-header">
+    <a class="brand portal-brand-link" href="./index.html" aria-label="Back to Bodega Snack home">
+      <img src="./assets/bodega-logo.png" alt="Bodega Snack">
+      <span>Corner of convenience</span>
+    </a>
+    <a class="button button-light" href="./index.html#order">Start an order</a>
+  </header>
+
+  <main class="portal-shell" id="portal">
+    <section class="portal-story">
+      <div class="portal-story-copy">
+        <p class="eyebrow">BODEGA SNACK CLIENTS</p>
+        <h1>Your snack program, one request away.</h1>
+        <p>Client portal access is issued after your first approved order. Use it to request reorders, update pantry preferences, and reach your order desk faster.</p>
+        <ul>
+          <li>Reorder from saved assortments</li>
+          <li>Request delivery schedule changes</li>
+          <li>Update headcount and dietary needs</li>
+          <li>Ask for new products or substitutions</li>
+        </ul>
+      </div>
+      <div class="portal-products" aria-hidden="true">
+        <img class="portal-shake" src="./assets/twisted-cup.webp" alt="">
+        <img class="portal-gummy" src="./assets/gummy-mix.webp" alt="">
+      </div>
+    </section>
+
+    <section class="portal-access" aria-labelledby="portal-title">
+      <div class="portal-card">
+        <a class="back-link" href="./index.html">← Back to Bodega Snack</a>
+        <p class="eyebrow">CLIENT PORTAL</p>
+        <h2 id="portal-title">Request a secure access link.</h2>
+        <p class="portal-intro">Enter the email connected to your account. Your request will open in your email app for the Bodega Snack order desk.</p>
+
+        <form id="access-form" novalidate>
+          <label>Client email *<input name="email" type="email" autocomplete="email" placeholder="you@company.com" required></label>
+          <label>Company or account name *<input name="company" type="text" autocomplete="organization" placeholder="Your company" required></label>
+          <label>Client or last order number <input name="account" type="text" autocomplete="off" placeholder="Optional"></label>
+          <button class="button button-orange button-large" type="submit">Request access link</button>
+          <p class="portal-note">For your security, portal access is verified by the order desk before a link is issued.</p>
+          <p class="form-error" id="access-error" role="alert" hidden></p>
+        </form>
+
+        <div class="access-result" id="access-result" hidden>
+          <span aria-hidden="true">✓</span>
+          <div><strong>Your request is ready.</strong><p>Review the prepared email and press send. The order desk will verify your account.</p></div>
+          <a class="button button-dark" id="send-access-request" href="#">Open email</a>
+        </div>
+
+        <div class="new-client">
+          <strong>New to Bodega Snack?</strong>
+          <p>Build your first office, wholesale, or individual order in one form.</p>
+          <a class="text-link" href="./index.html#order">Start a first order <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

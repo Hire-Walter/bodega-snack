@@ -1,0 +1,102 @@
+.login-page { min-height: 100vh; background: var(--ink); }
+.portal-header {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  right: 0;
+  min-height: 86px;
+  padding: 14px max(24px, calc((100vw - var(--max)) / 2));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--white);
+}
+.portal-brand-link img { border: 1px solid rgba(255,255,255,.35); }
+.portal-shell { min-height: 100vh; display: grid; grid-template-columns: 1.05fr .95fr; }
+.portal-story {
+  position: relative;
+  min-height: 100vh;
+  padding: 150px 7vw 70px max(30px, calc((100vw - var(--max)) / 2));
+  background: var(--orange);
+  color: var(--white);
+  border-right: 3px solid var(--ink);
+  overflow: hidden;
+}
+.portal-story::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(0,0,0,.2) 1.2px, transparent 1.2px);
+  background-size: 18px 18px;
+  opacity: .3;
+}
+.portal-story-copy { position: relative; z-index: 3; max-width: 700px; }
+.portal-story h1 {
+  margin: 0;
+  max-width: 700px;
+  font-family: Impact, Haettenschweiler, "Arial Black", sans-serif;
+  font-size: clamp(4.4rem, 7.2vw, 8.2rem);
+  line-height: .82;
+  letter-spacing: -.045em;
+  text-transform: uppercase;
+}
+.portal-story-copy > p:not(.eyebrow) { max-width: 620px; margin: 28px 0; font-size: 1.08rem; }
+.portal-story ul { position: relative; z-index: 4; margin: 30px 0 0; padding: 0; list-style: none; max-width: 560px; }
+.portal-story li { padding: 10px 0; border-top: 1px solid rgba(255,255,255,.42); font-weight: 750; }
+.portal-story li::before { content: "✓"; margin-right: 10px; color: var(--yellow); }
+.portal-products { position: absolute; z-index: 2; width: 48%; height: 48%; right: -3%; bottom: -3%; }
+.portal-shake { position: absolute; width: 66%; left: 0; bottom: 0; transform: rotate(-6deg); filter: drop-shadow(0 18px 18px rgba(0,0,0,.28)); }
+.portal-gummy { position: absolute; z-index: 2; width: 58%; right: 0; bottom: -2%; transform: rotate(7deg); filter: drop-shadow(0 18px 18px rgba(0,0,0,.28)); }
+
+.portal-access {
+  min-height: 100vh;
+  padding: 128px clamp(28px, 6vw, 100px) 70px;
+  display: grid;
+  align-items: center;
+  background: var(--paper);
+}
+.portal-card { width: min(100%, 580px); margin: auto; }
+.back-link { display: inline-block; margin-bottom: 55px; font-size: .78rem; font-weight: 900; text-transform: uppercase; letter-spacing: .06em; }
+.portal-card h2 {
+  margin: 0;
+  font-family: Impact, Haettenschweiler, "Arial Black", sans-serif;
+  font-size: clamp(3.4rem, 5.6vw, 5.8rem);
+  line-height: .88;
+  letter-spacing: -.035em;
+  text-transform: uppercase;
+}
+.portal-intro { margin: 22px 0 30px; color: var(--muted); }
+#access-form { display: grid; gap: 17px; }
+#access-form label { display: grid; gap: 7px; font-size: .8rem; font-weight: 850; }
+#access-form .button { margin-top: 5px; width: 100%; }
+.portal-note { margin: 0; color: var(--muted); font-size: .72rem; text-align: center; }
+.access-result { margin-top: 22px; padding: 19px; border: 2px solid var(--ink); border-radius: 18px; background: var(--yellow); display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: start; }
+.access-result[hidden] { display: none; }
+.access-result > span { width: 35px; height: 35px; display: grid; place-items: center; border-radius: 999px; background: var(--ink); color: var(--white); font-weight: 900; }
+.access-result p { margin: 2px 0 12px; font-size: .8rem; }
+.access-result .button { grid-column: 2; justify-self: start; }
+.new-client { margin-top: 34px; padding-top: 28px; border-top: 1px solid var(--line); }
+.new-client p { margin: 5px 0 10px; color: var(--muted); font-size: .88rem; }
+
+@media (max-width: 900px) {
+  .portal-header { position: relative; background: var(--ink); }
+  .portal-shell { grid-template-columns: 1fr; }
+  .portal-story { min-height: 720px; padding: 80px 25px 60px; border-right: 0; border-bottom: 3px solid var(--ink); }
+  .portal-products { width: 56%; height: 45%; }
+  .portal-access { min-height: auto; padding: 80px 25px; }
+  .back-link { margin-bottom: 40px; }
+}
+
+@media (max-width: 560px) {
+  .portal-header { min-height: 72px; padding: 10px 16px; }
+  .portal-header .brand img { width: 48px; height: 48px; }
+  .portal-header .button { font-size: .75rem; padding: 9px 13px; }
+  .portal-story { min-height: 660px; }
+  .portal-story h1 { font-size: clamp(4rem, 18vw, 6rem); }
+  .portal-story-copy > p:not(.eyebrow) { font-size: .98rem; }
+  .portal-products { width: 75%; height: 37%; right: -12%; }
+  .portal-card h2 { font-size: clamp(3.4rem, 16vw, 5rem); }
+  .access-result { grid-template-columns: 1fr; }
+  .access-result .button { grid-column: auto; }
+}
