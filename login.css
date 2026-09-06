@@ -12,7 +12,7 @@
   justify-content: space-between;
   color: var(--white);
 }
-.portal-brand-link img { border: 1px solid rgba(255,255,255,.35); }
+.portal-brand-link { padding: 5px 9px; background: var(--white); border: 2px solid var(--ink); }
 .portal-shell { min-height: 100vh; display: grid; grid-template-columns: 1.05fr .95fr; }
 .portal-story {
   position: relative;
